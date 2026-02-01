@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ayush-codes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <div class="page-loader">
+            <div class="loader-spinner"></div>
+        </div>
+
+        <style>
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #00ff88;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hide when loaded */
+        body.loaded .page-loader {
+            opacity: 0;
+            pointer-events: none;
+        }
+        </style>
+
+        <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            setTimeout(() => {
+                document.querySelector('.page-loader').style.display = 'none';
+            }, 500);
+        });
+        </script>
+    <style>
+        /* Simple split container */
+        .contact-split {
+            height: 100vh;
+            background: linear-gradient(15deg, 
+                #000 0%,    
+                #000 50%, 
+                #7700ff 50%,   
+                #7700ff 100%);
+        }
+        
+        /* Simple centered card */
+        .contact-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 300px;
+            width: 80%;
+            color: white;
+        }
+        
+        /* Simple back button */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: #00ff88;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #00ff88;
+            color: black;
+            transform: translateY(-5px);
+        }
+        
+        /* Simple contact items */
+        .contact-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #00ff88;
+            background: rgba(0, 255, 136, 0.05);
+        }
+        
+        .contact-btn {
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: #00ff88;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .contact-btn a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Split container -->
+    <div class="contact-split">
+        <!-- Simple card -->
+        <div class="contact-card">
+            <h2 style="color: #00ff88;">Contact</h2>
+            
+            <div class="contact-item">
+                <h3>Email</h3>
+                <button class="contact-btn">
+                    <a href="mailto:ayushsakpal2010@gmail.com">ayushsakpal2010@gmail.com</a>
+                </button>
+            </div>
+            
+            <div class="contact-item">
+                <h3>GitHub</h3>
+                <button class="contact-btn">
+                    <a href="https://github.com/glock-commits/" target="_blank">glock-commits</a>
+                </button>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Instagram</h3>
+                <button class="contact-btn">
+                    <a href="https://www.instagram.com/glock.copy/" target="_blank">@glock.copy</a>
+                </button>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p>+91 81694 60014</p>
+            </div>
+            <div class="contact-item">
+                <button class="contact-btn">
+                    <a href="index.html" target="_blank">Back</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

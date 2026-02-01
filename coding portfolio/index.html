@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+    <head>
+        <title>Ayush-codes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <div class="page-loader">
+            <div class="loader-spinner"></div>
+        </div>
+
+        <style>
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #00ff88;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hide when loaded */
+        body.loaded .page-loader {
+            opacity: 0;
+            pointer-events: none;
+        }
+        </style>
+
+        <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            setTimeout(() => {
+                document.querySelector('.page-loader').style.display = 'none';
+            }, 500);
+        });
+        </script>
+    </head>
+
+    <body>
+
+        <br>
+        <button class="topbutton1" onclick="scrollToSection('about')">About Me</button>
+        <button class="topbutton2" onclick="scrollToSection('projects')">Projects</button>
+        <button class="circle-btn">
+            <img src="1000087040.jpg" alt="profile">
+        </button>
+
+        <div id="home" class="split-container">
+            <h1 class="green">
+                <strong>
+                    Hi !
+                <strong>
+            </h1>
+
+            <h1 class="black">
+                <strong>
+                    I'm <br> Ayush
+                <strong>
+            </h1>
+        </div>
+
+        <div id="about" class="split-container-2">
+            <div class="purple">
+                <br><br><br>
+                I build stuff that helps you get your ideas to people<br>
+                who might need it.<br>
+            </div>
+            <div class="purple">
+                I Am a student who writes, codes, and likes to design but with one rule :<br>
+                If it looks good but loads slow or breaks, it's useless<br>
+                i focus on simple, readable designs, which convey the beautiful message your project gives.<br>
+            </div><br><br>
+            <div class="purple">
+                I work with :
+                <br><br>
+                &#8226 HTML, CSS, Java and modern front-end tools
+                <br><br>
+                &#8226 One page sites, portfolio and small buisiness websites
+            </div><br><br>
+            <div class="purple">
+                &#8226 Clean UI, responsive design, and fast load times
+                <br><br><br><br>
+            </div>
+            <div class="purple">   
+            I'm still early in my journey, which means two things :
+                <br><br><br>
+            &#8226 I care a lot about every project
+            </div>
+            <div class="purple"><br><br>
+                &#8226 I dont ship half-baked work
+                <br><br>
+                If you want a website that's beautiful and intentional just like your message <br>
+                Let's talk
+            </div>
+
+        <div id="projects" class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-dot dot-1"></div> 
+            <div class="card1">
+                <h3>This <br> Website !</h3>
+                <p> This is also one of my website isn't it ?</p>
+            </div>
+            
+            <div class="timeline-dot dot-2"></div> 
+            <div class="card2">
+                <h3>Writing Portfolio</h3>
+                <p>My another portfolio <br> but on writing !</p>
+                <button class="button4">
+                    <a href="https://ayush-writes-2026.netlify.app/">Click to See !</a>
+                </button>
+            </div>
+            
+            <div class="timeline-dot dot-3"></div> 
+            <div class="card3">
+                <h3>Project 3</h3>
+                <p>This Could be yours,<br>
+                What are you waiting for ?</p>
+                <button class="button4"><a href="contact.html">Contact Me !</a></button>
+            </div>
+        </div>
+
+        <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' 
+                });
+            } else {
+                console.error('Section not found:', sectionId);
+            }
+        }
+        </script>
+
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else {
+                        entry.target.classList.remove("show");
+                    }
+                });
+            }, { 
+            });
+
+            document.querySelectorAll(".purple, .timeline-container, .timeline-line, .timeline-dot, .card1, .card2, .card3").forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+    </body>
+
+</html> 
